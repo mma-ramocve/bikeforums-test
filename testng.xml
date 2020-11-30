@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Aleksandra/IdeaProjects/BikeForumTest/src/tests/TestHome.java">
+        <classes>
+            <class name="tests.TestHome">
+                <methods>
+                    <include name="getMarketplaceFromHomePage"/>
+                    <include name="getHomePageFromMarketplace"/>
+                    <include name="getNewPostsFromHomePage"/>
+                    <include name="getGeneralCyclingDiscussion"/>
+                    <include name="getContactUs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Aleksandra/IdeaProjects/BikeForumTest/src/tests/TestLogIn.java">
+        <classes>
+            <class name="tests.TestLogIn">
+                <methods>
+                    <include name="logInExistingUser"/>
+                    <include name="getClassicVintageDiscussion"/>
+                    <include name="sortClassicVintagePostsASC"/>
+                    <include name="getTheOldestClassicVintagePost"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Aleksandra/IdeaProjects/BikeForumTest/src/tests/TestNumOfPostsInGenCyc.java">
+        <classes>
+            <class name="tests.TestNumOfPostsInGenCyc">
+                <methods>
+                    <include name="logInExistingUser"/>
+                    <include name="checkNumOfPostsInGCD"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Aleksandra/IdeaProjects/BikeForumTest/src/tests/TestSearch.java">
+        <classes>
+            <class name="tests.TestSearch">
+                <methods>
+                    <include name="searchPosts"/>
+                    <include name="openPostGreetingsFromSerbia"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
