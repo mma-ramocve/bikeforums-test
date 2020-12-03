@@ -72,12 +72,18 @@ public class TestNumOfPostsInGenCyc {
         int dayOfYear = numOfDays.get(Calendar.DAY_OF_YEAR);
         System.out.println("Number of days in this year till today: " + dayOfYear);
 
-        String numberOfPosts = driver.findElement(By.xpath("//*[@id=\"main-content\"]/div[1]/div[3]/div/div[5]")).getText().trim().replaceAll(",", "");
+        WebElement baseTable = driver.findElement(By.className("tbox"));
 
-        int numOfPosts = Integer.parseInt(numberOfPosts);
-        System.out.println("Number of posts in General Cycling Discussion: " + numOfPosts);
+        WebElement firstTheme = baseTable.findElement(By.xpath("//*[@id=\"main-content\"]/div[1]/div[3]"));
+        String firstThemeTitle = firstTheme.findElement(By.xpath("//*[@id=\"f7\"]/div[1]/h2/a/strong")).getText();
+        String firstThemePostsNo = firstTheme.findElement(By.xpath("//*[@id=\"main-content\"]/div[1]/div[3]/div/div[5]")).getText().replaceAll(",", "");
 
-        Assert.assertTrue(dayOfYear < numOfPosts);
-        System.out.println("Number of posts is greater then number of days.");
+        System.out.println("The number of posts in " + firstThemeTitle + " is " + firstThemePostsNo + ".");
+
+        int postsNo = Integer.parseInt(firstThemePostsNo);
+
+        Assert.assertTrue(dayOfYear < postsNo);
+        System.out.println("Number of posts is greater than number of days.");
+
     }
 }
