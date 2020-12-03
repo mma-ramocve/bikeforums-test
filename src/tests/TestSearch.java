@@ -5,11 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.Home;
 
@@ -23,19 +21,14 @@ public class TestSearch {
         System.setProperty("webdriver.chrome.driver", Home.driverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(Home.homeUrl);
-    }
-
-    @BeforeMethod
-    public void implicitWait() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass
     public void closeBrowser() {
         driver.quit();
     }
-
 
     @Test(priority = 0, testName = "Test search -> 'capriolo'")
     // Test search -> 'capriolo'

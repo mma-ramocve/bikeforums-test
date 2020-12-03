@@ -22,12 +22,8 @@ public class TestHome {
         System.setProperty("webdriver.chrome.driver", Home.driverPath);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(Home.homeUrl);
-    }
-
-    @BeforeMethod
-    public void implicitWait() {
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     @AfterClass
