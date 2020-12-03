@@ -59,8 +59,8 @@ public class TestNumOfPostsInGenCyc {
         Assert.assertEquals(actualUsername, "mma.ramocve");
     }
 
-    @Test(priority = 1, testName = "Check if number of posts in General Cycling is greater than number of days in this year till today")
-    // Check if number of posts in General Cycling is greater than number of days in this year till today
+    @Test(priority = 1, testName = "Check if number of posts in first theme is greater than number of days in this year till today")
+    // Check if number of posts in first theme is greater than number of days in this year till today
     public void checkNumOfPostsInGCD() {
         WebElement forumTab = driver.findElement(By.xpath(Home.forumTabXPath));
         WebElement bikeForumSubmenu = driver.findElement(By.xpath(Home.bikeForumSubmenuXPath));
